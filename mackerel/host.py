@@ -22,6 +22,7 @@ class Host(object):
         """Construct a host.
 
         :param name: Host name
+        :param display_name: Host display name
         :param meta: Host metadata
         :param type: Host type
         :param status: Host status
@@ -34,6 +35,7 @@ class Host(object):
         """
         self.args = kwargs
         self.name = kwargs.get('name', None)
+        self.display_name = kwargs.get('displayName', None)
         self.meta = kwargs.get('meta', None)
         self.type = kwargs.get('type', None)
         self.status = kwargs.get('status', None)
@@ -58,9 +60,9 @@ class Host(object):
 
     def __repr__(self):
         repr = '<Host('
-        repr += 'name={0}, meta={1}, type={2}, status={3}, memo={4},'
-        repr += 'is_retired={5}, id={6}, created_at={7}, roles={8},'
-        repr += 'interfaces={9})'
-        return repr.format(self.name, self.meta, self.type, self.status,
-                           self.memo, self.is_retired, self.id,
+        repr += 'name={0}, display_name={1}, meta={2}, type={3}, status={4},'
+        repr += 'memo={5}, is_retired={6}, id={7}, created_at={8}, roles={9},'
+        repr += 'interfaces={10})'
+        return repr.format(self.name, self.display_name, self.meta, self.type,
+                           self.status, self.memo, self.is_retired, self.id,
                            self.created_at, self.roles, self.interfaces)
